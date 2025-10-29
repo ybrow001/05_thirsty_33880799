@@ -54,7 +54,7 @@ router.get('/search_result', (req, res) => {
 });
 
 router.get("/register", (req,res) => {
-    res.render("register.ejs", shopData); 
+    res.render("register.ejs", shopData) 
 });
 
 router.post("/registered", (req,res) => { // return name and email using post protocol
@@ -66,15 +66,34 @@ router.post("/registered", (req,res) => { // return name and email using post pr
 });
 
 router.get("/survey", (req,res) => {
-    res.render("survey.ejs", shopData); 
+    res.render("survey.ejs", shopData)
 });
 
-router.post("/survey_complete", (req,res) => { // return name and email using post protocol
-    res.send(
-        "hello " + req.body.first + 
-        " thank you for taking the time to fill out our survey! " +
-        "it's hugely helpful in assisting us to improve our services and customer satisfaction :)"
-    )
+router.post("/survey_complete", (req,res) => { // return user input data via POST
+    let drinkType = req.body.drink_type;
+    let isStudent = req.body.is_student;
+    
+    if(req.body.is_student != "yes") {
+        isStudent = "no"
+    };
+    // assigns value to unchecked checkbox for "are you a student?"
+
+    let surveyData = {
+        name: req.body.first,
+        drinkType: drinkType, 
+        isStudent: isStudent
+    };
+
+    res.render(survey_complete.ejs, shopData, surveyData)
+
+    // res.send(
+    //     "hello " + req.body.first + 
+    //     " thank you for taking the time to fill out our survey! " +
+    //     "it's hugely helpful in assisting us to improve our services and customer satisfaction :)" +
+    //     " review your responses below: " + "what is your age?: " + req.body.age + 
+    //     " which of the following drink types do you consume the most?: " + req.body.drink_type +
+    //     " are you a student?: " + isStudent
+    // )
 }); 
 
 // Export the router object so index.js can access it

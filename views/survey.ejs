@@ -2,15 +2,36 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <title><%=shopName%></title>
+        <title><%=shopName%> customer survey</title>
     </head>
     <body>
         <h1><%=shopName%> customer survey </h1>
         <form method="POST" action="/survey_complete"> 
-            first name: <input id="first" type="text" name="first"/>
-            last name: <input id="last" type="text" name="last" /> 
+            <h2>your details:</h2>
+            first name: <input id="first" type="text" name="first" required/> 
+            <br>
+            last name: <input id="last" type="text" name="last" required/> 
+            <br>
             email: <input id="email" type="email" name="email" required/>
-            <!-- type email required - form can only be submitted with email including @ -->
+            <!-- email type required - form can only be submitted with email including @ -->
+            <br>
+            <h2>what we'd like to know:</h2>
+            what is your age?: <input id="age" type="text" name="age"/> 
+            <br>
+            which of the following drink types do you consume the most?: 
+            <input id="beer" value="beer" type="radio" name="drink_type"/> 
+            <label for="beer">beer</label>
+            <input id="wine" value="wine" type="radio" name="drink_type"/> 
+            <label for="wine">wine</label>
+            <input id="soft" value="soft drinks" type="radio" name="drink_type"/>
+            <label for="soft">soft drinks</label> 
+            <input id="hot" value="hot drinks" type="radio" name="drink_type"/> 
+            <label for="hot">hot drinks</label>
+            <br>
+            are you a student?: 
+            <input id="is_student" type="checkbox" name="is_student" value="yes"/> 
+            <label for="is_student">check if yes, leave blank if no</label>
+            <br><br>
             <input type="submit" value="submit"/> 
         </form> 
     </body>
