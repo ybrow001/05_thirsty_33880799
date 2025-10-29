@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title><%=shopName%></title>
+    </head>
+    <body>
+        <h1><%=shopName%> customer survey </h1>
+        <form method="POST" action="/survey_complete"> 
+            first name: <input id="first" type="text" name="first"/>
+            last name: <input id="last" type="text" name="last" /> 
+            email: <input id="email" type="email" name="email" required/>
+            <!-- type email required - form can only be submitted with email including @ -->
+            <input type="submit" value="submit"/> 
+        </form> 
+    </body>
+</html>
