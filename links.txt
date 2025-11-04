@@ -1,2 +1,1 @@
-home=http://www.doc.gold.ac.uk/usr/414/ 
-- yet to be running
+home=http://www.doc.gold.ac.uk/usr/414/

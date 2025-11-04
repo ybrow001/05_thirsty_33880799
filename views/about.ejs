@@ -7,10 +7,11 @@
     <body>
         <h1>about <%=shopName%></h1>
         <p>we sell all sorts of drinks!</p>
-        
+
         <h2>find us at one of our many locations!</h2>
         <ul>
-            <%for(const city in locations) {%>
+            <!-- embedded js code allows data in js variables to be looped through and rendered on the page -->
+            <%for(const city in locations) {%> 
                 <li><%=city%> - address: <%=locations[city].address%>, manager: <%=locations[city].manager%></li>
             <%}%>
         </ul>

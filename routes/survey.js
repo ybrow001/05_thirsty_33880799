@@ -31,6 +31,7 @@ router.post("/survey_complete", (req,res,next) => { // return user input data vi
     };
     // assigns value to unchecked checkbox for "are you a student?"
 
+    // chaining used to proccess form data before returning the survey_complete page
     next() 
 }, (req,res) => {
     res.render("survey_complete.ejs", {shopData, surveyData})
