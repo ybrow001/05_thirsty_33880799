@@ -18,7 +18,10 @@ app.use(express.urlencoded({ extended: true }));
 
 // load the route handlers
 const mainRoutes = require("./routes/main");
+const surveyRoutes = require("./routes/survey");
+
 app.use('/', mainRoutes);
+app.use('/', surveyRoutes);
 
 // start the web app listening
-app.listen(port, () => console.log(`xxample app listening on port ${port}!`));
+app.listen(port, () => console.log(`example app listening on port ${port}!`));

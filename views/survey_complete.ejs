@@ -2,17 +2,26 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
-        <title><%=shopName%> customer survey</title>
+        <title><%=shopData.shopName%> customer survey</title>
     </head>
     <body>
         <h1>survey results</h1>
-        <p> hello <%=name%> thank you for taking the time to fill out our survey! 
+        <p> hello <%=surveyData.firstName%>, thank you for taking the time to fill out our survey! 
             <br><br>
             your input is greatly appreciated.
             <br> 
-            customer feedback is tremendously helpful in assisting us to improve the products, service and experience we offer our customers.
+            customer feedback is tremendously helpful in assisting us to improve the products, services and experience we offer our customers.
             <br><br>
-            your responses are available for review below: 
+            your responses are available for review below:
+            <br><br>
+            name: <%=surveyData.firstName%> <%=surveyData.lastName%>
+            <br>
+            age: <%=surveyData.age%>
+            <br>
+            which of the following drink types do you consume most often?: <%=surveyData.drinkType%>
+            <br>
+            are you a student?: <%=surveyData.isStudent%>
+            <br>
         </p>
     </body>
 </html>
