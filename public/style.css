@@ -2,7 +2,7 @@ html, body {
     background-color: aliceblue;
     color: rgb(119, 198, 73);
     font-family: 'Courier New', Courier, monospace;
-    height: 100%;
+    height: 95%;
 }
 
 html {
@@ -15,3 +15,8 @@ body {
     align-self: center;
     align-items: center;
 }
+
+.heading {
+    display: flexbox;
+    align-content: center;
+} 
